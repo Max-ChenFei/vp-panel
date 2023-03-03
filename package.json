@@ -1,7 +1,25 @@
 {
   "name": "vp-panel",
   "version": "0.1.0",
+  "description": "General Node-based Visual Programing Panel",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Max-ChenFei/vp-panel.git"
+  },
+  "keywords": [
+    "react",
+    "visual programming",
+    "drag-and-drop programming",
+    "node-based ui"
+  ],
+  "author": "Fei Chen",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Max-ChenFei/vp-panel/issues",
+    "email": "boxchenfei@gmail.com"
+  },
+  "homepage": "https://github.com/Max-ChenFei/vp-panel#readme",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
