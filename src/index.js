@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import VPPanel from './VPPanel';
 import reportWebVitals from './reportWebVitals';
+import {
+  nodes as initialNodes,
+  edges as initialEdges,
+} from './dummyDataForTest';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <VPPanel nodesConfig={initialNodes} edgesConfig={initialEdges} />
   </React.StrictMode>
 );
 
