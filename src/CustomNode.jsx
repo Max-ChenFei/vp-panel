@@ -1,22 +1,23 @@
-import React, { memo } from "react";
-import { Handle, useReactFlow, useStoreApi, Position } from "reactflow";
+/* eslint-disable react/prop-types */
+import React, { memo } from 'react';
+import { Handle, useReactFlow, useStoreApi, Position } from 'reactflow';
 
 const options = [
   {
-    value: "smoothstep",
-    label: "Smoothstep",
+    value: 'smoothstep',
+    label: 'Smoothstep',
   },
   {
-    value: "step",
-    label: "Step",
+    value: 'step',
+    label: 'Step',
   },
   {
-    value: "default",
-    label: "Bezier (default)",
+    value: 'default',
+    label: 'Bezier (default)',
   },
   {
-    value: "straight",
-    label: "Straight",
+    value: 'straight',
+    label: 'Straight',
   },
 ];
 
@@ -29,6 +30,7 @@ function Select({ value, handleId, nodeId }) {
     setNodes(
       Array.from(nodeInternals.values()).map((node) => {
         if (node.id === nodeId) {
+          // eslint-disable-next-line no-param-reassign
           node.data = {
             ...node.data,
             selects: {
