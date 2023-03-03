@@ -19,7 +19,6 @@
     "url": "https://github.com/Max-ChenFei/vp-panel/issues",
     "email": "boxchenfei@gmail.com"
   },
-  "homepage": "https://github.com/Max-ChenFei/vp-panel#readme",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
