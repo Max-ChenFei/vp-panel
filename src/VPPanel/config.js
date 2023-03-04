@@ -12,5 +12,14 @@ const panelConfig = {
     portDetectionRadius: 10,
     type: 'bezier', // 'smoothstep', 'step', 'straight', 'bezier'
   },
+  background: {
+    type: 'dots',
+    gap: 16,
+    dotSize: 1,
+    crossSize: 6,
+    lineWidth: 1,
+    color: '#000000',
+    className: undefined,
+  },
 };
 export default panelConfig;

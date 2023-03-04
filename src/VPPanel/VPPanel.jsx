@@ -51,6 +51,7 @@ export default function VPPanel({ nodesConfig, edgesConfig }) {
     return edge;
   });
   const proOptions = { hideAttribution: false };
+  const bgConfig = panelConfig.background;
   return (
     <ReactFlow
       nodeTypes={types.nodeTypes}
@@ -80,7 +81,15 @@ export default function VPPanel({ nodesConfig, edgesConfig }) {
     >
       <MiniMap />
       <Controls />
-      <Background />
+      <Background
+        type={bgConfig.type}
+        gap={bgConfig.gap}
+        dotSize={bgConfig.dotSize}
+        crossSize={bgConfig.crossSize}
+        lineWidth={bgConfig.lineWidth}
+        color={bgConfig.color}
+        className={bgConfig.className}
+      />
     </ReactFlow>
   );
 }
