@@ -1,15 +1,39 @@
 /* eslint-disable react/prop-types */
 import React, { useCallback } from 'react';
-import ReactFlow, { useNodesState, useEdgesState, addEdge } from 'reactflow';
+import ReactFlow, {
+  useNodesState,
+  useEdgesState,
+  addEdge,
+  useKeyPress,
+} from 'reactflow';
 import { Controls, Background, MiniMap } from './components';
 import types from './types';
 import 'reactflow/dist/style.css';
 import './VPPanel.css';
 import panelConfig from './config';
+import useDidMountEffect from './hooks';
+
+function selectionKeyBinding(setNodes) {
+  const selectAllKeyPress = useKeyPress('Control+a');
+  const deselectAllKeyPress = useKeyPress('Escape');
+  const selectAllNodes = (sure) => {
+    setNodes((nds) => nds.map((n) => ({ ...n, selected: sure })));
+  };
+
+  useDidMountEffect(() => {
+    selectAllNodes(true);
+  }, [selectAllKeyPress]);
+
+  useDidMountEffect(() => {
+    selectAllNodes(false);
+  }, [deselectAllKeyPress]);
+}
 
 export default function VPPanel({ nodesConfig, edgesConfig }) {
-  const [nodes, , onNodesChange] = useNodesState(nodesConfig);
+  const [nodes, setNodes, onNodesChange] = useNodesState(nodesConfig);
   const [edges, setEdges, onEdgesChange] = useEdgesState(edgesConfig);
+
+  selectionKeyBinding(setNodes);
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
     []
@@ -49,6 +73,10 @@ export default function VPPanel({ nodesConfig, edgesConfig }) {
       }
       connection={panelConfig.connection.type}
       connectionRadius={panelConfig.connection.portDetectionRadius}
+      selectionOnDrag
+      selectionKeyCode={null}
+      multiSelectionKeyCode="Shift"
+      panOnDrag={[2]} // 2 = right moues button
     >
       <MiniMap />
       <Controls />
