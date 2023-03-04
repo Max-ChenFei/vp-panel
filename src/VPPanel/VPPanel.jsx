@@ -46,6 +46,8 @@ export default function VPPanel({ nodesConfig, edgesConfig }) {
       selectionMode={
         panelConfig.select.marqueeSelectionIfFullShapeIn ? 'full' : 'partial'
       }
+      connection={panelConfig.connection.type}
+      connectionRadius={panelConfig.connection.portDetectionRadius}
     >
       <MiniMap />
       <Controls />

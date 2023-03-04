@@ -8,5 +8,9 @@ const panelConfig = {
   select: {
     marqueeSelectionIfFullShapeIn: true,
   },
+  connection: {
+    portDetectionRadius: 10,
+    type: 'bezier', // 'smoothstep', 'step', 'straight', 'bezier'
+  },
 };
 export default panelConfig;
