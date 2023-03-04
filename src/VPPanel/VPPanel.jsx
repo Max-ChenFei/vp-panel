@@ -4,6 +4,7 @@ import ReactFlow, { useNodesState, useEdgesState, addEdge } from 'reactflow';
 import { Controls, Background, MiniMap } from './components';
 import types from './types';
 import 'reactflow/dist/style.css';
+import './VPPanel.css';
 import panelConfig from './config';
 
 export default function VPPanel({ nodesConfig, edgesConfig }) {
