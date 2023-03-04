@@ -4,6 +4,7 @@ import ReactFlow, { useNodesState, useEdgesState, addEdge } from 'reactflow';
 import { Controls, Background, MiniMap } from './components';
 import types from './types';
 import 'reactflow/dist/style.css';
+import panelConfig from './config';
 
 export default function VPPanel({ nodesConfig, edgesConfig }) {
   const [nodes, , onNodesChange] = useNodesState(nodesConfig);
@@ -27,6 +28,7 @@ export default function VPPanel({ nodesConfig, edgesConfig }) {
   const proOptions = { hideAttribution: false };
   return (
     <ReactFlow
+      nodeTypes={types.nodeTypes}
       nodes={nodes}
       edges={edgesWithUpdatedTypes}
       onNodesChange={onNodesChange}
@@ -34,8 +36,16 @@ export default function VPPanel({ nodesConfig, edgesConfig }) {
       onConnect={onConnect}
       fitView
       proOptions={proOptions}
-      nodeTypes={types.nodeTypes}
-      onlyRenderVisibleElements
+      edgesFocusable={false}
+      zoomOnDoubleClick={false}
+      minZoom={panelConfig.view.zoomSize[0]}
+      maxZoom={panelConfig.view.zoomSize[1]}
+      snapToGrid={panelConfig.view.snapToGrid}
+      snapGrid={panelConfig.view.snapGridSize}
+      onlyRenderVisibleElements={panelConfig.view.onlyRenderVisibleElements}
+      selectionMode={
+        panelConfig.select.marqueeSelectionIfFullShapeIn ? 'full' : 'partial'
+      }
     >
       <MiniMap />
       <Controls />
