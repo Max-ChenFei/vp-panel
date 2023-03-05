@@ -8,6 +8,7 @@ export const nodes = [
     data: {
       label: 'Input Node',
     },
+    sourcePosition: 'right',
     position: { x: 250, y: 0 },
   },
   {
@@ -16,6 +17,8 @@ export const nodes = [
       label: 'Default Node',
     },
     position: { x: 100, y: 100 },
+    sourcePosition: 'right',
+    targetPosition: 'left',
   },
   {
     id: '3',
@@ -24,6 +27,7 @@ export const nodes = [
       label: 'Output Node',
     },
     position: { x: 400, y: 100 },
+    targetPosition: 'left',
   },
   {
     id: '4',
@@ -85,7 +89,7 @@ export const nodes = [
 ];
 
 export const edges = [
-  { id: 'e1-2', source: '1', target: '2', label: 'this is an edge label' },
+  { id: 'e1-2', source: '1', target: '2' },
   { id: 'e1-3', source: '1', target: '3', animated: true },
   {
     id: 'e4-5',
