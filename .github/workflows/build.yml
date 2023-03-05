@@ -15,8 +15,8 @@ jobs:
         node-version: [16.x, 18.x]
 
     steps:
-     - name: Set git to use LF
-       run: |
+      - name: Set git to use LF
+        run: |
           git config --global core.autocrlf false
           git config --global core.eol lf
 
