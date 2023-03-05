@@ -53,6 +53,7 @@ export default function VPPanel({ nodesConfig, edgesConfig }) {
   const proOptions = { hideAttribution: false };
   const bgConfig = panelConfig.background;
   const controlConfig = panelConfig.control;
+  const minimapConfig = panelConfig.minimap;
   return (
     <ReactFlow
       nodeTypes={types.nodeTypes}
@@ -80,7 +81,12 @@ export default function VPPanel({ nodesConfig, edgesConfig }) {
       multiSelectionKeyCode="Shift"
       panOnDrag={[2]} // 2 = right moues button
     >
-      <MiniMap />
+      <MiniMap
+        wight={minimapConfig.width}
+        height={minimapConfig.height}
+        zoomable={minimapConfig.zoomable}
+        pannable={minimapConfig.pannable}
+      />
       <Controls
         className={controlConfig.className}
         position={controlConfig.position}

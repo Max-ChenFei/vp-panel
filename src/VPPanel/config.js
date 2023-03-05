@@ -25,5 +25,12 @@ const panelConfig = {
     className: undefined,
     position: 'bottom-left',
   },
+  minimap: {
+    height: 120,
+    width: 200,
+    zoomable: true,
+    pannable: true,
+  },
 };
+
 export default panelConfig;
