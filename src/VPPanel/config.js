@@ -21,5 +21,9 @@ const panelConfig = {
     color: '#000000',
     className: undefined,
   },
+  control: {
+    className: undefined,
+    position: 'bottom-left',
+  },
 };
 export default panelConfig;

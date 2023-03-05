@@ -52,6 +52,7 @@ export default function VPPanel({ nodesConfig, edgesConfig }) {
   });
   const proOptions = { hideAttribution: false };
   const bgConfig = panelConfig.background;
+  const controlConfig = panelConfig.control;
   return (
     <ReactFlow
       nodeTypes={types.nodeTypes}
@@ -80,7 +81,10 @@ export default function VPPanel({ nodesConfig, edgesConfig }) {
       panOnDrag={[2]} // 2 = right moues button
     >
       <MiniMap />
-      <Controls />
+      <Controls
+        className={controlConfig.className}
+        position={controlConfig.position}
+      />
       <Background
         type={bgConfig.type}
         gap={bgConfig.gap}
