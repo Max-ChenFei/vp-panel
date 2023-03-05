@@ -79,6 +79,7 @@ export default function VPPanel({ nodesConfig, edgesConfig }) {
       selectionOnDrag
       selectionKeyCode={null}
       multiSelectionKeyCode="Shift"
+      deleteKeyCode="Delete"
       panOnDrag={[2]} // 2 = right moues button
     >
       <MiniMap
