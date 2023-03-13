@@ -1,0 +1,4 @@
+/* hide the selection rectangle after selection */
+.react-flow__nodesselection-rect {
+  display: none;
+}
